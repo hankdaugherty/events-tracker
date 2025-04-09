@@ -12,6 +12,21 @@
   </header>
   
   <main>
+    <section id="add-event">
+      <h2>Add New Event</h2>
+      <form id="event-form">
+        <div class="form-row">
+          <input type="text" name="title" placeholder="Title" required />
+          <input type="date" name="date" required />
+          <input type="time" name="time" required />
+          <input type="text" name="location" placeholder="Location" required />
+          <input type="text" name="description" placeholder="Description" />
+          <button type="submit">Add Event</button>
+        </div>
+      </form>
+    </section>
+    
+    
     <section id="events-container" class="event-grid"></section>
   </main>
 

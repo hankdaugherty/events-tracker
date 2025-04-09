@@ -73,3 +73,35 @@ body {
     border-left: 4px solid red;
   }
   
+  #add-event {
+    margin: 2rem 1rem;
+  }
+  
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .form-row input,
+  .form-row textarea,
+  .form-row button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .form-row button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    background: #004080;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .form-row button:hover {
+    background: #003060;
+  }
+  
