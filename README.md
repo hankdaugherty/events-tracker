@@ -56,18 +56,18 @@ Visit http://localhost:8000 in your browser.
 
 ## Roadmap
 
-This project is being developed in progressive full stack stages. Upcoming milestones:
+This project is being developed in progressive full stack stages.
 
 ### Complete
-- Static HTML/CSS MVP  
-- Modular JavaScript  
-- JSON-based API-driven frontend  
+- Static HTML/CSS MVP 
+- Modular JavaScript
+- JSON-based API-driven frontend
+- Express.js backend with REST API 
+- MongoDB data storage 
 
 ### In Progress
-- Express.js backend with REST API  
-- MongoDB data storage  
-- User authentication  
-- React-based frontend  
+- User authentication 
+- React-based frontend
 - Full deployment pipeline (CI/CD)
 
 ---
