@@ -18,33 +18,9 @@ A full-stack web application for browsing and managing local events. Built incre
 ## Project Structure
 
 ```bash
-events-tracker/ 
-├── index.html 
-├── styles.css 
-└── js/ 
-│ └── main.js 
-│ └── render.js
-├── api/ # Express + MongoDB backend
-│ └── server.js
-│ └── models/
-│ │   └── Event.js
-│ │   └── User.js
-│ └── middleware/
-│ │   └── auth.js
-│ └── scripts/
-│ │   └── seed-user.js
-├── events-tracker-react/ # React frontend (Vite + Tailwind)
-│ └── src/
-│ │   └── App.jsx
-│ │   └── main.jsx
-│ └── components/
-│ │   └── Login.jsx
-│ │   └── Signup.jsx
-│ │   └── EventList.jsx
-│ │   └── EventForm.jsx
-│ │   └── Modal.jsx
-│ │   └── ChangePassword.jsx
-│ └── tailwind.config.js
+events-tracker/
+├── api/                    # Express + MongoDB backend
+├── events-tracker-react/  # React + Vite frontend
 ```
 
 ---
