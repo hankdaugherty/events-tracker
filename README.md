@@ -1,18 +1,18 @@
 # Local Events Tracker
 
-A modular full-stack web application for browsing and managing local events. Built in progressive stages using modern technologies.
+A full-stack web application for browsing and managing local events. Built incrementally with modern tools including **Express**, **MongoDB**, **JWT authentication**, and a **React + Tailwind CSS** frontend.
 
 
 ## Features
 
-- Responsive, mobile-friendly layout
-- Modular JavaScript using ES Modules
-- Dynamic event loading via RESTful API
-- MongoDB-backed data persistence
-- User authentication (JWT-based)
-- Protected admin-only event creation and deletion
-- In-progress event editing functionality
-- Modern UI with modal interactions
+- Mobile-friendly, responsive layout
+- React frontend with Tailwind CSS
+- Modular backend (Express + MongoDB)
+- RESTful API for CRUD operations
+- Secure user authentication (JWT)
+- Password change and signup support
+- Modal UI for viewing/editing events
+- Per-user event ownership and permissions
 ---
 
 ## Project Structure
@@ -24,12 +24,27 @@ events-tracker/
 └── js/ 
 │ └── main.js 
 │ └── render.js
-├── api/ 
+├── api/ # Express + MongoDB backend
 │ └── server.js
 │ └── models/
 │ │   └── Event.js
+│ │   └── User.js
 │ └── middleware/
 │ │   └── auth.js
+│ └── scripts/
+│ │   └── seed-user.js
+├── events-tracker-react/ # React frontend (Vite + Tailwind)
+│ └── src/
+│ │   └── App.jsx
+│ │   └── main.jsx
+│ └── components/
+│ │   └── Login.jsx
+│ │   └── Signup.jsx
+│ │   └── EventList.jsx
+│ │   └── EventForm.jsx
+│ │   └── Modal.jsx
+│ │   └── ChangePassword.jsx
+│ └── tailwind.config.js
 ```
 
 ---
@@ -37,31 +52,28 @@ events-tracker/
 ## Setup & Run Locally
 
 ### Prerequisites
-- Git
 - Node.js + npm
-- Python 3 (for static frontend server)
-- MongoDB (or MongoDB Atlas)
+- MongoDB (local or Atlas)
+- Git
 
-
-### Steps
-
+### Backend (API)
 ```bash
-# Clone repo
-git clone git@github.com:hankdaugherty/events-tracker.git
-cd events-tracker
-
-# Start backend API
 cd api
 npm install
 node server.js
-
-# In a separate terminal, serve frontend
-cd ../
-python3 -m http.server
-
 ```
-- Visit http://localhost:3000 - API
-- Visit http://localhost:8000 - Frontend
+
+### Frontend (React + Vite)
+```bash
+cd events-tracker-react
+npm install
+npm run dev
+```
+
+- API runs at http://localhost:3000
+- React app runs at http://localhost:5173
+
+To seed an initial admin user, run: node scripts/seed-user.js
 
 ---
 
@@ -70,18 +82,18 @@ python3 -m http.server
 This project is being developed in progressive full stack stages.
 
 ### Complete
-- Static HTML/CSS MVP
-- Modular JavaScript frontend
-- Express + MongoDB backend
-- Admin login with JWT
-- Event creation + deletion
+- REST API with MongoDB
+- JWT-based login/logout flow
+- Event creation, editing, deletion
+- React frontend migration
+- User ownership on events
+- Password change support
 
 ### In Progress
-- Event editing with prefill + dynamic form state
-- Frontend migration to React with Vite
-- Full CI/CD deployment via Render
-- User roles and ownership tags
-- Image uploads and media embedding
+- Media upload for events
+- CI/CD deployment via Render/Vercel
+- Admin role support
+- Public view mode (unauthenticated)
 
 ---
 
