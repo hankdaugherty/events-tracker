@@ -1,23 +1,18 @@
 # Local Events Tracker
 
-A modular, front-end JavaScript application for browsing and exploring local events.
+A modular full-stack web application for browsing and managing local events. Built in progressive stages using modern technologies.
 
-
-### Live Demo
-
-- [View on GitHub Pages](https://hankdaugherty.github.io/events-tracker/)
-- [View on Netlify](https://harmonious-lollipop-50000a.netlify.app/)
-
----
 
 ## Features
 
 - Responsive, mobile-friendly layout
 - Modular JavaScript using ES Modules
-- Dynamic event loading via JSON API (fetch)
-- Interactive event cards with modal detail views
-- Clean, modern UI using vanilla CSS
-
+- Dynamic event loading via RESTful API
+- MongoDB-backed data persistence
+- User authentication (JWT-based)
+- Protected admin-only event creation and deletion
+- In-progress event editing functionality
+- Modern UI with modal interactions
 ---
 
 ## Project Structure
@@ -26,11 +21,15 @@ A modular, front-end JavaScript application for browsing and exploring local eve
 events-tracker/ 
 ├── index.html 
 ├── styles.css 
-├── data/ 
-│ └── events.json 
 └── js/ 
 │ └── main.js 
 │ └── render.js
+├── api/ 
+│ └── server.js
+│ └── models/
+│ │   └── Event.js
+│ └── middleware/
+│ │   └── auth.js
 ```
 
 ---
@@ -39,18 +38,30 @@ events-tracker/
 
 ### Prerequisites
 - Git
-- Python 3 (for static server)
-- A modern browser
+- Node.js + npm
+- Python 3 (for static frontend server)
+- MongoDB (or MongoDB Atlas)
 
 
 ### Steps
 
 ```bash
+# Clone repo
 git clone git@github.com:hankdaugherty/events-tracker.git
 cd events-tracker
+
+# Start backend API
+cd api
+npm install
+node server.js
+
+# In a separate terminal, serve frontend
+cd ../
 python3 -m http.server
+
 ```
-Visit http://localhost:8000 in your browser.
+- Visit http://localhost:3000 - API
+- Visit http://localhost:8000 - Frontend
 
 ---
 
@@ -59,16 +70,18 @@ Visit http://localhost:8000 in your browser.
 This project is being developed in progressive full stack stages.
 
 ### Complete
-- Static HTML/CSS MVP 
-- Modular JavaScript
-- JSON-based API-driven frontend
-- Express.js backend with REST API 
-- MongoDB data storage 
+- Static HTML/CSS MVP
+- Modular JavaScript frontend
+- Express + MongoDB backend
+- Admin login with JWT
+- Event creation + deletion
 
 ### In Progress
-- User authentication 
-- React-based frontend
-- Full deployment pipeline (CI/CD)
+- Event editing with prefill + dynamic form state
+- Frontend migration to React with Vite
+- Full CI/CD deployment via Render
+- User roles and ownership tags
+- Image uploads and media embedding
 
 ---
 
